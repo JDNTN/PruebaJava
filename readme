@@ -1,0 +1,21 @@
+Aclaraciones:
+
+1. La lectura del archivo funciona, sin embargo no guarda los datos en la DB.
+
+2. Al eliminar una sucursal se borra en cascada por lo tanto elimina usuarios. (Se mira en el video)
+
+3. No se pedia creación por lo cual no se agregó sin embargo estan los metodos listos para implementar.
+
+
+Enunciado:
+
+Indicaciones
+
+Utilizando las herramientas de desarrollo que usted conozca, debe desarollar una aplicación web tomando en cuenta las siguientes consideraciones:
+
+- La aplicación debe permitir carga un archivo en formato JSON con la estructura descrita en la sección anterior
+- Los datos cargados del archivo deben guardarse en la base de datos 
+- Debe diseñar la base de datos acorde a la estructura del archivo JSON
+- Desarollar una pantalla que permita la visualización de los registros cargados (estos deben ser leidos desde la base de datos)
+- La aplicación debe permitir  la edición y eliminación de las sucrusales y todos los datos asociados a ella
+- Al momento de editar, los datos deberán ser guardados en la base de datos

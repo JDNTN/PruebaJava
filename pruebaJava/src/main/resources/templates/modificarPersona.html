@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:="http://www.w3.org/1998/xhtml">
+    <head>
+        <title>Datos de la persona</title>
+        <meta charset="UTF-8">        
+    </head>
+    <body>
+        <h1>Datos de la persona</h1>
+        <a th:href="@{/personas}">Regresar</a>
+        <br/>        
+        <form th:action="@{/personas/guardar}" method="post" th:object="${persona}"> <!--asdf notacion para unir objeto a un form con input-> th:object="${nombreObjeto}-->
+            
+            <input type="hidden" name ="CUI" th:field="*{CUI}"/>      
+            
+            <label for="nombre">Nombre <label/>
+                <input type="text" name="nombre" th:field="*{nombre}"/> <!--asdf notacion para unir nombre de campo con input-> th:field="*{nombre}-->
+                <br/>      
+            <label for="id Sucursal">Sucursal <label/>
+                <input type="text" name="idSucursal" th:field="*{idSucursal}"/> <!--asdf notacion para unir nombre de campo con input-> th:field="*{nombre}-->
+                <br/>   
+                
+                <input type="submit" name="guardar" value="Guardar"/>
+        </form> 
+    </body>
+</html>

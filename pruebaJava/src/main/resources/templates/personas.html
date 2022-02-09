@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Personas</title>
+        <meta charset="UTF-8">        
+    </head>
+    <body>
+        <h1>Colaboladores</h1>
+        <a th:href="@{/}">Menu</a>        
+        <div th:if="${personas != null and !personas.empty}">
+            <table>
+                <tr>
+                    <th>CUI</th>
+                    <th>Nombre</th>  
+                </tr>            
+                <tr th:each="persona: ${personas}">
+                    <td th:text="${persona.CUI}"></td>            
+                    <td th:text="${persona.nombre}"></td>                                
+                    <td> <a th:href="@{/personas/} + ${persona.CUI}"> Editar </a></td>
+                    <td> <a th:href="@{/personas/eliminar(CUI = ${persona.CUI})}"> Eliminar </a></td>
+                </tr> 
+            </table>
+        </div>
+        <div th:if="${personas == null or personas.empty}">
+            <p>La lista esta vacia</p>
+        </div>
+    </body>
+</html>

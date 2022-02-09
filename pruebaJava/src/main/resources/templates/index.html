@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Main</h1>              
+        <a th:href="@{/empresas}">Empresas</a> 
+        <a th:href="@{/sucursales}">Sucursales</a> 
+        <a th:href="@{/personas}">Personas</a> 
+        <br>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file"/>
+            <br>
+            <input type="submit" value="Cargar"/>
+        </form>
+    </body>
+</html>

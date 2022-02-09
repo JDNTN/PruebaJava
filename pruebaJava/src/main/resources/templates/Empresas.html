@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Pruebas SpringJava</title>
+        <meta charset="UTF-8">        
+    </head>
+    <body>
+        <h1>Empresas</h1>        
+        <a th:href="@{/}">Menu</a> 
+        <div th:if="${empresas != null and !empresas.empty}">
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Pais</th>  
+                </tr>            
+                <tr th:each="empresa: ${empresas}">
+                    <td th:text="${empresa.nombre}"></td>            
+                    <td th:text="${empresa.pais}"></td>                    
+                    <!--<td> <a th:href="@{/sucursales/} + ${empresa.idEmpresa}"> Sucursales </a></td>
+                    <td> <a th:href="@{/editar/} + ${empresa.idEmpresa}"> Editar </a></td>
+                   <td> <a th:href="@{/eliminar(empresa = ${empresa.idEmpresa})}"> Eliminar </a></td>-->
+                </tr> 
+            </table>
+        </div>
+        <div th:if="${empresas == null or empresas.empty}">
+            <p>La lista esta vacia</p>
+        </div>
+    </body>
+</html>

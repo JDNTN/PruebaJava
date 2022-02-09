@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Pruebas SpringJava</title>
+        <meta charset="UTF-8">        
+    </head>
+    <body>
+        <h1>Sucursales</h1>
+        <a th:href="@{/}">Menu</a> 
+        <!--<a th:href="@{/agregar}">Sucursales</a>
+        <a th:href="@{/empresas}">Empresas</a>
+        <a th:href="@{/personas}">Personas</a>-->
+        <div th:if="${sucursales != null and !sucursales.empty}">
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Direccion</th>  
+                    <th>telefono</th>  
+                </tr>            
+                <tr th:each="sucursal: ${sucursales}">
+                    <td th:text="${sucursal.nombre}"></td>            
+                    <td th:text="${sucursal.direccion}"></td>
+                    <td th:text="${sucursal.telefono}"></td>                    
+                    <!--<td> <a th:href="@{/personas/} + ${sucursal.idSucursal}"> Personas </a></td>-->
+                    <td> <a th:href="@{/personas}"> Personas </a></td>
+                    <td> <a th:href="@{/sucursal/} + ${sucursal.idSucursal}"> Editar </a></td>
+                    <td> <a th:href="@{/sucursal/eliminar(idSucursal = ${sucursal.idSucursal})}"> Eliminar </a></td>
+                </tr> 
+            </table>
+        </div>
+        <div th:if="${sucursales == null or sucursales.empty}">
+            <p>La lista esta vacia</p>
+        </div>
+    </body>
+</html>
